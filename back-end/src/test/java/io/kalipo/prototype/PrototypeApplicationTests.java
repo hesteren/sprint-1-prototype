@@ -1,4 +1,4 @@
-package api;
+package io.kalipo.prototype;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
