@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -13,9 +14,12 @@ public class User {
 
     @Id
     @GeneratedValue
-    public Long id;
+    private Long id;
 
     private String name;
+
+    @OneToMany
+    private List<Nft> nfts;
 
     protected User() {}
 
