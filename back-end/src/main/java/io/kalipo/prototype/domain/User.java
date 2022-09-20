@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -25,5 +26,6 @@ public class User {
 
     public User(String name) {
         this.name = name;
+        this.nfts = new ArrayList<>();
     }
 }

@@ -3,6 +3,7 @@ package io.kalipo.prototype.presentation;
 import io.kalipo.prototype.application.UserService;
 import io.kalipo.prototype.domain.User;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +15,8 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    public ResponseEntity<User> create(String name) {
-        return ResponseEntity.ok(this.userService.create(name));
+    public ResponseEntity<User> create(@RequestBody UserDto userDto) {
+        return ResponseEntity.ok(this.userService.create(userDto.getName()));
     }
 
     @GetMapping("/{id}")
@@ -24,8 +25,8 @@ public class UserController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody String name) {
-        return ResponseEntity.ok(this.userService.update(id, name));
+    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody UserDto userDto) {
+        return ResponseEntity.ok(this.userService.update(id, userDto.getName()));
     }
 
     @DeleteMapping("/{id}")
@@ -33,4 +34,9 @@ public class UserController {
         this.userService.delete(id);
         return ResponseEntity.ok("User with id: " + id + " deleted");
     }
+}
+
+@Data
+class UserDto {
+    private String name;
 }
