@@ -28,4 +28,8 @@ public class User {
         this.name = name;
         this.nfts = new ArrayList<>();
     }
+
+    public void addNft(Nft nft) {
+        this.nfts.add(nft);
+    }
 }

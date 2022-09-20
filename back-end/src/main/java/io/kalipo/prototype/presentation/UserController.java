@@ -34,6 +34,11 @@ public class UserController {
         this.userService.delete(id);
         return ResponseEntity.ok("User with id: " + id + " deleted");
     }
+
+    @PostMapping("/{userId}/nft/{nftId}")
+    public ResponseEntity<User> addNft(@PathVariable Long userId, @PathVariable Long nftId) {
+        return ResponseEntity.ok(this.userService.addNft(userId, nftId));
+    }
 }
 
 @Data
