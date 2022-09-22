@@ -8,13 +8,6 @@ import Account from "./components/Account.vue";
 
 
     <div class="wrapper">
-      <Account
-          :account = "{name: 'John', nfts: []}"
-      />
-
-      <Account
-          :account = "{name: 'John', nfts: ['1', '2', '3']}"
-      />
 
 <!--      <nav>-->
 <!--        <RouterLink to="/">Home</RouterLink>-->
