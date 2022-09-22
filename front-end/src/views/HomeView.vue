@@ -13,8 +13,11 @@ export default {
     AccountsList
   },
 
+
   created() {
-    fetch("http://localhost:8080/users", {
+    const HOST = "https://kalipo-prototype.herokuapp.com";
+
+    fetch(`${HOST}/users`, {
       method: "GET"
     }).then(resp => resp.json())
     .then(data => {
@@ -24,18 +27,7 @@ export default {
 
   data() {
     return {
-      accounts: [{
-        name: 'Max',
-        nfts: ['1'],
-      },
-        {
-          name: 'Selcuk',
-          nfts: ['10', '20'],
-        },
-        {
-          name: 'kester',
-          nfts: [],
-        },]
+      accounts: []
     }
   },
 
