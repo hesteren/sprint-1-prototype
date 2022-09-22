@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import Account from "./components/Account.vue";
 </script>
 
 <template>
@@ -8,6 +9,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
+      <Account
+          :account = "{name: 'John', nfts: []}"
+      />
+
+      <Account
+          :account = "{name: 'John', nfts: ['1', '2', '3']}"
+      />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
