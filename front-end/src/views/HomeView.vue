@@ -1,6 +1,7 @@
 <template>
   <main>
     <AccountsList :array="accounts"></AccountsList>
+
   </main>
 </template>
 
