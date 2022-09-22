@@ -1,6 +1,6 @@
 <template>
 
-  <h1>List component</h1>
+  <h1>Alle users</h1>
     <div v-for="item in array">
       <Account :account="item"></Account>
     </div>
