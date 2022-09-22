@@ -1,19 +1,37 @@
-<script setup>
-import List from '../components/AccountsList.vue';
+<template>
+  <main>
+    <AccountsList :array="accounts"></AccountsList>
+  </main>
+</template>
 
-fetch("http://localhost:8080/users", {
-  method: "GET"
-}).then(resp => resp.json())
-.then(data => console.log(data))
+
+<script>
+import AccountsList from "../components/AccountsList.vue"
+export default {
+  components: {
+    AccountsList
+  },
+
+  created() {
+    fetch("http://localhost:8080/users", {
+      method: "GET"
+    }).then(resp => resp.json())
+    .then(data => {
+      this.accounts = data;
+    })
+  },
+
+  data() {
+    return {
+      accounts: []
+    }
+  },
+
+
+
+
+
+}
 
 </script>
 
-<template>
-  <main>
-    <List :array="[{
-            name: 'Max',
-            nfts: ['1']
-            }
-]"></List>
-  </main>
-</template>
