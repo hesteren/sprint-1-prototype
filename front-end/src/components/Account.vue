@@ -4,9 +4,9 @@
   >
     <h3>
       {{ account.name }}
-      <i id="open"
+      <p id="open"
          v-if="account.nfts.length > 0"
-         @click="openNfts()" class="fa-solid fa-chevron-down"></i>
+         @click="openNfts()">  {{ this.listOpen ? '˄' : '˅'}}</p>
     </h3>
   </div>
 </template>
@@ -16,16 +16,24 @@ export default {
   name: 'Account',
   props: {
     account: Object,
+    listOpen: Boolean,
   },
   components: {
   },
   methods: {
     openNfts() {
-      this.template.getElementById('open').class = 'fa-solid fa-chevron-up'
-      this.$emit('open-nfts', this.account.id)
+      this.listOpen = !this.listOpen
+      this.$emit('open-list', this.listOpen)
     },
   },
-  emits: ['open-nfts'],
+  emits: ['open-list'],
+  data() {
+    return {
+      listOpen: false,
+    }
+  },
+
+
 }
 </script>
 
@@ -35,13 +43,15 @@ h3 {
 }
 
 .account {
-  background: #f4f4f4;
+  background: #e7e7e7;
   margin: 5px;
-  padding: 10px 20px;
+  padding: 25px 20px;
+  height: 75px;
   cursor: pointer;
+  border-left: 5px solid #3f3f3f;
 }
 .account.empty {
-  border-left: 5px solid #777777;
+  border-left: 5px solid #b9b9b9;
 }
 .account h3 {
   display: flex;
