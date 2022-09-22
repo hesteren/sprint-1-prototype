@@ -5,6 +5,8 @@ import io.kalipo.prototype.domain.User;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class UserService {
@@ -36,5 +38,9 @@ public class UserService {
         u.addNft(this.nftService.read(nftId));
         this.userRepository.save(u);
         return u;
+    }
+
+    public List<User> index() {
+        return this.userRepository.findAll();
     }
 }

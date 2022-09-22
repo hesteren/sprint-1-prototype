@@ -1,7 +1,10 @@
 <script setup>
 import List from '../components/AccountsList.vue';
 
-
+fetch("http://localhost:8080/users", {
+  method: "GET"
+}).then(resp => resp.json())
+.then(data => console.log(data))
 
 </script>
 

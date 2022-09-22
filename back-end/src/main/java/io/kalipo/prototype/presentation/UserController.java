@@ -7,9 +7,12 @@ import lombok.Data;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
 @RequestMapping("/users")
+@CrossOrigin
 public class UserController {
 
     private UserService userService;
@@ -38,6 +41,11 @@ public class UserController {
     @PostMapping("/{userId}/nft/{nftId}")
     public ResponseEntity<User> addNft(@PathVariable Long userId, @PathVariable Long nftId) {
         return ResponseEntity.ok(this.userService.addNft(userId, nftId));
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<User>> index() {
+        return ResponseEntity.ok(this.userService.index());
     }
 }
 
