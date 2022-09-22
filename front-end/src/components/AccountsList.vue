@@ -1,10 +1,10 @@
 <template>
-  <div class="listframe">
+  <!-- <div class="listframe"> -->
     <h1>List component</h1>
       <div v-for="item in array">
         <Account :account="item"></Account>
       </div>
-  </div>
+  <!-- </div> -->
 
 
 </template>
