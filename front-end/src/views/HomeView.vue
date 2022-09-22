@@ -1,6 +1,7 @@
 <template>
   <main>
     <AccountsList :array="accounts"></AccountsList>
+
   </main>
 </template>
 
@@ -23,13 +24,20 @@ export default {
 
   data() {
     return {
-      accounts: []
+      accounts: [{
+        name: 'Max',
+        nfts: ['1'],
+      },
+        {
+          name: 'Selcuk',
+          nfts: ['10', '20'],
+        },
+        {
+          name: 'kester',
+          nfts: [],
+        },]
     }
   },
-
-
-
-
 
 }
 

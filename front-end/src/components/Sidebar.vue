@@ -27,7 +27,7 @@
         <span class="material-icons">search</span>
         <span class="text">Logs</span>
       </router-link>
-      <router-link to="/logs" class="button">
+      <router-link to="/badges" class="button">
         <span class="material-icons">badge</span>
         <span class="text">Badges</span>
       </router-link>
