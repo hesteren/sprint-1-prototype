@@ -8,16 +8,9 @@ import List from '../components/List.vue';
 <template>
   <main>
     <List :array="[{
-            id: 1,
-            data: 'Max',
-            },
-            {
-            id: 2,
-            data: 'Kes',
-            },
-            {
-            id: 3,
-            data: 'Sel',
-            }]"></List>
+            name: 'Max',
+            nfts: ['1']
+            }
+]"></List>
   </main>
 </template>
