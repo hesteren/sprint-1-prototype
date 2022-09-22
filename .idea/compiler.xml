@@ -7,12 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sprint-1-prototype" />
+        <module name="prototype" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="back-end" target="17" />
-      <module name="prototype" target="17" />
+      <module name="sprint-1-prototype" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
