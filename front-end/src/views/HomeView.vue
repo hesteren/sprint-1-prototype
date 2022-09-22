@@ -1,36 +1,5 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-import List from "../components/List";
-
-
-
-export default {
-
-  created() {
-    this.accounts = [
-      {
-        id: 1,
-        name: 'Max',
-      },
-      {
-        id: 2,
-        name: 'Sel',
-      },
-      {
-        id: 3,
-        name: 'Kes',
-      },
-    ]
-  },
-  data() {
-    return {
-      accounts: []
-    }
-  }
-}
-
-
-
+import List from '../components/List.vue';
 
 
 
@@ -38,6 +7,17 @@ export default {
 
 <template>
   <main>
-    <List :array="accounts"></List>
+    <List :array="[{
+            id: 1,
+            data: 'Max',
+            },
+            {
+            id: 2,
+            data: 'Kes',
+            },
+            {
+            id: 3,
+            data: 'Sel',
+            }]"></List>
   </main>
 </template>

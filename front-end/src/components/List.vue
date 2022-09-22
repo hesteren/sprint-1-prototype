@@ -1,13 +1,13 @@
 <template>
 
-  <div :key="item.id" v-for="item in array">
-    <p> {{item.data}} </p>
-  </div>
+  <h1>List component</h1>
+
+    <div v-for="item in array">
+      <p> {{item.data}} </p>
+    </div>
+
 
 </template>
-
-
-
 
 <script>
     export default {
@@ -15,18 +15,9 @@
       props: {
         array: Array
       },
-      components: {
-
-      },
-      methods: {
-
-      },
     }
 </script>
 
-
-
-
-<style>
+<style scoped>
 
 </style>
