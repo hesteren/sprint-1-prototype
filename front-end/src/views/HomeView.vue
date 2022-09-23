@@ -1,16 +1,20 @@
 <template>
   <main>
     <AccountsList :array="accounts"></AccountsList>
-
+    <OpenButton></OpenButton>
   </main>
 </template>
 
 
 <script>
+
+import OpenButton from "../components/OpenButton.vue"
 import AccountsList from "../components/AccountsList.vue"
+
 export default {
   components: {
-    AccountsList
+    AccountsList,
+    OpenButton
   },
 
 
